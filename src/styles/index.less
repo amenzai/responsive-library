@@ -1,0 +1,317 @@
+/* ==========================================================================
+   首页样式
+   ========================================================================== */
+
+#header {
+  border-top: 8px solid @mainColor-dark;
+  position: relative;
+  background-color: #fff;
+  .logo {
+    margin: 10px;
+    width: 282px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .nav-t {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 16px;
+    li {
+      display: inline-block;
+      a {
+        display: block;
+        padding: 10px 20px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 759px) {
+  #header {
+    border-top: 0;
+    .logo {
+      width: 200px;
+      margin: 4px 0 4px 60px;
+    }
+    .nav-t {
+      top: 51px;
+      right: 0px;
+      width: 140px;
+      background-color: #333;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      z-index: 2000;
+    }
+    .nav-t li {
+      display: block;
+    }
+    .nav-t li a {
+      display: block;
+      padding: 10px 20px;
+      line-height: 20px;
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 759px) {
+  .icon-navicon {
+    display: block;
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-size: 16px;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    line-height: 20px;
+    // transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1) 0s;
+    cursor: pointer;
+  }
+  .nav-navicon {
+    display: none;
+  }
+}
+
+#search {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  &:before {
+    .setTopLine();
+  }
+  h1 {
+    font-size: 24px;
+    padding-bottom: 20px;
+  }
+  .search-bar {
+    margin: 0px auto;
+    position: relative;
+    width: 594px;
+    .input {
+      width: 500px;
+      border-right: none;
+    }
+    .icon-search {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      position: absolute;
+      top: 4px;
+      right: 0;
+      width: 34px;
+      height: 34px;
+      text-align: center;
+      line-height: 34px;
+      font-size: 16px;
+      display: none;
+      color: #999;
+    }
+  }
+  .tab-btn {
+    width: 280px;
+    margin: 10px auto;
+    .btns {
+      border: 1px solid @gray-light;
+      font-size: 12px;
+      padding: 6px 20px;
+      line-height: 20px;
+      // transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1) 0s;
+      cursor: pointer;
+    }
+    .btns.active {
+      background-color: @mainColor;
+      border-color: @mainColor;
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 759px) {
+  #search {
+    position: relative;
+    &:after {
+      .setBottomLine();
+    }
+    .search-bar {
+      width: 90%;
+      .input {
+        width: 100%;
+        border: 1px solid #ddd;
+      }
+    }
+  }
+}
+
+.card {
+  .notice {
+    border-top: 2px solid @red;
+  }
+  .resource {
+    border-top: 2px solid @yellow;
+  }
+  .consult {
+    border-top: 2px solid @blue;
+  }
+  .service,
+  .teaching {
+    border-top: 2px solid #000;
+  }
+  .notice,
+  .resource,
+  .consult,
+  .service,
+  .teaching {
+    background-color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    h2 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+  }
+  .service,
+  .teaching {
+    li {
+      position: relative;
+      display: inline-block;
+      a {
+        display: block;
+        padding: 10px 20px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 759px) {
+  .card {
+    .notice,
+    .resource,
+    .consult,
+    .service,
+    .teaching {
+      background-color: #fff;
+      position: relative;
+      text-align: left;
+      border: 0;
+      padding-bottom: 0;
+      &:before {
+        .setTopLine();
+      }
+      &:after {
+        .setBottomLine();
+      }
+      h2 {
+        text-align: left;
+      }
+      .text-list li {
+        position: relative;
+        &:before {
+          .setTopLine();
+        }
+        a {
+          padding: 10px 0;
+        }
+      }
+    }
+    .service {
+      li {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        &:after {
+          content: " ";
+          .setArrow(right, 6px, @gray-light, 2px);
+          position: absolute;
+          top: 50%;
+          right: 12px;
+          margin-top: -2px;
+        }
+        a {
+          padding-right: 30px;
+          background-color: @bg-dark;
+        }
+      }
+    }
+    .teaching {
+      li {
+        position: relative;
+        display: block;
+        &:before {
+          .setTopLine();
+        }
+        a {
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  .t {
+    background-color: #fff;
+    font-size: 16px;
+    padding: 0 15px;
+    position: relative;
+    &:before {
+      .setTopLine();
+    }
+    li {
+      display: inline-block;
+      margin-right: 10px;
+      a {
+        display: block;
+        padding: 8px 6px;
+        line-height: 20px;
+        &:hover {
+          background-color: @bg-dark;
+        }
+      }
+    }
+  }
+  .b {
+    padding: 8px;
+    background-color: #333;
+    color: #fff;
+    p:first-child {
+      padding-bottom: 4px;
+    }
+  }
+}
+
+@media (max-width: 759px) {
+  #footer {
+    .t {
+      font-size: 14px;
+      text-align: left;
+      li {
+        display: inline-block;
+        margin-right: 5px;
+        position: relative;
+        &:after {
+          content: " ";
+          .setArrow(right, 6px, @gray-light, 2px);
+          position: absolute;
+          top: 50%;
+          right: 12px;
+          margin-top: -2px;
+        }
+        a {
+          padding: 10px 30px 10px 20px;
+          line-height: 20px;
+          &:hover {
+            background-color: @bg-dark;
+          }
+        }
+      }
+    }
+  }
+}

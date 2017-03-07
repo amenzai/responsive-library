@@ -1,0 +1,46 @@
+/* ==========================================================================
+   notice.less
+   ========================================================================== */
+
+.post {
+  padding: 20px 40px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+  &:before {
+    .setTopLine();
+  }
+  h1 {
+    font-size: 24px;
+    padding-bottom: 10px;
+    font-weight: 400;
+  }
+  p {
+    margin-bottom: 10px;
+    line-height: 24px;
+    color: @gray;
+  }
+  .post-content {
+    p {
+      text-indent: 2em;
+      font-size: 16px;
+      line-height: 28px;
+      color: @gray-darker;
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width:759px) {
+  .post {
+    padding-left: 15px;
+    padding-right: 15px;
+    &:after {
+      .setBottomLine();
+    }
+  }
+}
